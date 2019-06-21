@@ -47,8 +47,13 @@ console.log(letterCounter(ourString))
 
 // 4. Write a function called getFib that returns the first 10 numbers of the Fibonacci sequence in an array. [1, 1, 2, 3, 5, 8, 13, 21, 34, 55]
 const getFib = () => {
-	let arr = []
+	let arr = [1, 1]
+	for (let i = 0; i < 8; i++){
+		arr.push(arr[i]+arr[i + 1])
+	}
+	return arr
 }
+console.log(getFib())
 
 //5. Write a function called oddChecker that takes in the fullArr and uses a for loop to return a new array of only odd numbers. Copy and paste your code and refactor using ES6 syntax.
 
@@ -68,11 +73,8 @@ var fullArr = [4, 9, 0, "7", 8, true, "hey", 7, 199, -9, false, "hola"]
 // console.log(oddChecker(fullArr))
 
 const oddChecker = (arr) => {
-	return arr.filter((value, index) => {
-		if (typeof arr[index] === 'number'){
-			if (arr[index] % 2 !== 0){
-			}
-		}
+	return arr.filter(value => {
+		return (typeof value === 'number' && value % 2 !== 0)
 	})
 }
 console.log(oddChecker(fullArr))
